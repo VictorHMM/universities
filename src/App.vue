@@ -2,21 +2,21 @@
   <v-app>
     <AppTopBar/>
       <v-main>
-        <UnisList/>
+        <UnisListView/>
     </v-main>
   </v-app>
 </template>
 
 <script>
 import AppTopBar from './components/shared/AppTopBar.vue'
-import UnisList from './components/shared/UnisList.vue'
+import UnisListView from './views/UnisListView.vue'
 
 export default {
   name: 'App',
 
   components: {
     AppTopBar,
-    UnisList,
+    UnisListView,
   },
 
   data: () => ({

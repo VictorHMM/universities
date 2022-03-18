@@ -1,6 +1,6 @@
 <template>
   <v-container>
-<v-simple-table>
+<v-simple-table class="width-100%">
     <template v-slot:default>
       <thead>
         <tr>
@@ -13,12 +13,9 @@
         </tr>
       </thead>
       <tbody>
-        <tr
-          v-for="uni in unisArray"
-          :key="uni.name"
-        >
+        <tr v-for="uni in universities" :key="uni.name">
           <td>{{ uni.name }}</td>
-          <td>{{ uni.webPages[0] }}</td>
+          <td>{{ uni.web_pages[0] }}</td>
         </tr>
       </tbody>
     </template>
@@ -28,28 +25,13 @@
 
 <script>
 export default {
-  name: "UnisList",
-  data: () => {
-    return {
-      unisArray: [
-        {
-          name: "Futureworks",
-          country: "United Kingdom",
-          webPages: ["https://futureworks.ac.uk/"],
-        },
-        {
-          name: "University of Arts of London",
-          country: "United Kingdom",
-          webPages: ["https://arts.ac.uk/"],
-        },
-        {
-          name: "University of Aberdeen",
-          country: "United Kingdom",
-          webPages: ["https://abdn.ac.uk/"],
-        },
-      ],
-    };
-  },
+  name: 'UnisList',
+  props: {
+    universities: {
+        type: Array,
+        required: true
+    }
+  }
 };
 </script>
 
