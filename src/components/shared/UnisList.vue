@@ -1,8 +1,28 @@
 <template>
   <v-container>
-    <ul>
-      <li v-for="uni in unisArray" :key="uni.name">{{ uni.name }}</li>
-    </ul>
+<v-simple-table>
+    <template v-slot:default>
+      <thead>
+        <tr>
+          <th class="text-left">
+            Name
+          </th>
+          <th class="text-left">
+            Webpage
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          v-for="uni in unisArray"
+          :key="uni.name"
+        >
+          <td>{{ uni.name }}</td>
+          <td>{{ uni.webPages[0] }}</td>
+        </tr>
+      </tbody>
+    </template>
+  </v-simple-table>
   </v-container>
 </template>
 
